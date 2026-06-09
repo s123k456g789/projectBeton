@@ -14,17 +14,7 @@ class ContractorCreateDTO(BaseModel):
     """
 
     # שם הקבלן - עד 15 תווים
-    first_name: Optional[str] = Field(None, max_length=15, description="שם פרטי הקבלן")
-
-
-    # שם הקבלן - עד 15 תווים
-    last_name: Optional[str] = Field(None, max_length=15, description="שם משפחה הקבלן")
-
-    # שם הקבלן - עד 15 תווים
-    user_name: Optional[str] = Field(None, max_length=15, description="שם משתמש של הקבלן")
-
-    # שם הקבלן - עד 15 תווים
-    password: Optional[str] = Field(None, max_length=15, description=" סיסמא של הקבלן")
+    name: Optional[str] = Field(None, max_length=15, description="שם הקבלן")
 
     # מספר טלפון של הקבלן - עד 15 תווים
     phone: Optional[str] = Field(None, max_length=15, description="מספר טלפון")
@@ -37,10 +27,7 @@ class ContractorResponseDTO(BaseModel):
     """
 
     id: int
-    first_name: Optional[str] = None
-    last_name: Optional[str] = None
-    user_name: Optional[str] = None
-    password: Optional[str] = None
+    name: Optional[str] = None
     phone: Optional[str] = None
 
     class Config:

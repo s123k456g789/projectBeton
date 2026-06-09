@@ -47,7 +47,6 @@ class ContractorConcreteRequestRepository:
             lng=data.lng,
             expiry_time=data.expiry_time,
             region=data.region,
-            price=data.price,
         )
         self.db.add(new_offer)
         self.db.commit()
@@ -77,8 +76,7 @@ class ContractorConcreteRequestRepository:
             existing.expiry_time = data.expiry_time
         if data.region is not None:
             existing.region = data.region
-        if data.price is not None:
-            existing.region = data.price
+
         self.db.commit()
         self.db.refresh(existing)
         return existing

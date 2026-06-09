@@ -41,10 +41,7 @@ class CustomerRepository:
         """
         # יצירת אובייקט מודל חדש מנתוני ה-DTO
         new_customer = Customer(
-            first_name=customer_data.first_name,
-            last_name=customer_data.last_name,
-            user_name=customer_data.user_name,
-            password=customer_data.password,
+            name=customer_data.name,
             phone=customer_data.phone
         )
 
@@ -66,14 +63,8 @@ class CustomerRepository:
             return None      # לא נמצא - מחזירים None
 
         # עדכון השדות
-        if customer_data.first_name is not None:
-            existing.name = customer_data.first_name
-        if customer_data.last_name is not None:
-            existing.name = customer_data.last_name
-        if customer_data.user_name is not None:
-            existing.name = customer_data.user_name
-        if customer_data.password is not None:
-            existing.phone = customer_data.password
+        if customer_data.name is not None:
+            existing.name = customer_data.name
         if customer_data.phone is not None:
             existing.phone = customer_data.phone
 

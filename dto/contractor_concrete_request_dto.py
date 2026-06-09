@@ -37,9 +37,6 @@ class ContractorConcreteRequestCreateDTO(BaseModel):
     # אזור
     region: Optional[str] = Field(None, max_length=100, description="אזור גיאוגרפי")
 
-    # מחיר
-    price: Optional[str] = Field(None, max_length=100, description="מחיר")
-
 
 class ContractorConcreteRequestResponseDTO(BaseModel):
     """
@@ -55,7 +52,6 @@ class ContractorConcreteRequestResponseDTO(BaseModel):
     lng: Optional[Decimal] = None
     expiry_time: Optional[datetime] = None
     region: Optional[str] = None
-    price: Optional[str] = None
 
     class Config:
         from_attributes = True

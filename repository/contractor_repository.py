@@ -27,12 +27,7 @@ class ContractorRepository:
     def create(self, contractor_data: ContractorCreateDTO) -> Contractor:
         """יצירת קבלן חדש"""
         new_contractor = Contractor(
-            first_name=contractor_data.first_name,
-            last_name=contractor_data.last_name,
-            user_name=contractor_data.last_name,
-
-            password=contractor_data.last_name,
-
+            name=contractor_data.name,
             phone=contractor_data.phone
         )
         self.db.add(new_contractor)
@@ -46,14 +41,8 @@ class ContractorRepository:
         if not existing:
             return None
 
-        if contractor_data.first_name is not None:
-            existing.name = contractor_data.first_name
-        if contractor_data.last_name is not None:
-            existing.name = contractor_data.last_name
-        if contractor_data.user_name is not None:
-            existing.name = contractor_data.user_name
-        if contractor_data.password is not None:
-            existing.name = contractor_data.password
+        if contractor_data.name is not None:
+            existing.name = contractor_data.name
         if contractor_data.phone is not None:
             existing.phone = contractor_data.phone
 

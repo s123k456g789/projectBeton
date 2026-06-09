@@ -43,4 +43,3 @@ class ConcreteRequest(Base):
 
     # אזור גיאוגרפי (לסינון מהיר לפי אזורים)
     region = Column(String(100), nullable=True)
-

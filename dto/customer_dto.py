@@ -16,17 +16,8 @@ class CustomerCreateDTO(BaseModel):
     מכיל את הנתונים שהלקוח שולח לשרת
     """
 
-    # שם םרטי הלקוח - אופציונלי, עד 15 תווים (כפי שמוגדר ב-DB)
-    first_name: Optional[str] = Field(None, max_length=15, description="שם םרטי הלקוח")
-
-    # שם משפחה הלקוח - אופציונלי, עד 15 תווים (כפי שמוגדר ב-DB)
-    last_name: Optional[str] = Field(None, max_length=15, description="שם משפחה הלקוח")
-
-    # שם משפחה הלקוח - אופציונלי, עד 15 תווים (כפי שמוגדר ב-DB)
-    user_name: Optional[str] = Field(None, max_length=15, description="שם משתמש של הלקוח")
-
-    # שם משפחה הלקוח - אופציונלי, עד 15 תווים (כפי שמוגדר ב-DB)
-    password: Optional[str] = Field(None, max_length=15, description="סיסמא של הלקוח הלקוח")
+    # שם הלקוח - אופציונלי, עד 15 תווים (כפי שמוגדר ב-DB)
+    name: Optional[str] = Field(None, max_length=15, description="שם הלקוח")
 
     # מספר טלפון - אופציונלי, עד 20 תווים
     phone: Optional[str] = Field(None, max_length=20, description="מספר טלפון")
@@ -39,12 +30,7 @@ class CustomerResponseDTO(BaseModel):
     """
 
     id: int                              # המזהה של הלקוח שנוצר ב-DB
-    first_name: Optional[str] = None           # שם פרטי הלקוח
-    last_name: Optional[str] = None           # שם משפחה הלקוח
-    user_name: Optional[str] = None           # שם משתמש של הלקוח
-
-    password: Optional[str] = None           #  סיסמא של הלקוח
-
+    name: Optional[str] = None           # שם הלקוח
     phone: Optional[str] = None          # טלפון
 
     class Config:
